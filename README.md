@@ -1,4 +1,4 @@
-### PyTorch .whl for generic aarch64 platforms
+# PyTorch .whl for generic aarch64 platforms
 
 Just download the file or clone the repository, and install the wheel using pip.
 
@@ -12,7 +12,7 @@ I wanted to run some PyTorch models on my Ultra96 board for eventual use in Xili
 
 In case you you have a differnt version of python, or any other reason you might have to build it yourself, ill describe the steps below.
 
-# Memory Considerations
+### Memory Considerations
 
 The biggest challenge building a large library like this on an embeedde device is the limitaion of RAM (Ultra96 has 2GB). To combat this, you could make some extra swap space, or you could limit jobs the number of jobs used when building. I would recommned making sure you have at least 1GB swap and limiting the jobs to 1, as just using a lot of swap will slow things to a standstill if you dont have lightning fast swap.
 
@@ -30,7 +30,7 @@ Finally, set the max number of jobs. I did 1 to be safe, but if you want it to g
 
 `export MAX_JOBS=1`
 
-# download dependencies and clone PyTorch
+### download dependencies and clone PyTorch
 
 Dependencies:
 
@@ -42,11 +42,11 @@ Clone PyTorch:
 
 Set build options for embeeded machine (no cude, no MKL, etc)
 
-`export NO_CUDA=1
-export NO_DISTRIBUTED=1
-export NO_MKLDNN=1 
-export NO_NNPACK=1
-export NO_QNNPACK=1`
+`export NO_CUDA=1`
+`export NO_DISTRIBUTED=1`
+`export NO_MKLDNN=1`
+`export NO_NNPACK=1`
+`export NO_QNNPACK=1`
 
 and finally, run the build.
 
